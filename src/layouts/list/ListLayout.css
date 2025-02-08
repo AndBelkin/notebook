@@ -1,0 +1,53 @@
+header {
+  position: static;
+  transform: translate(0, 0);
+}
+
+.list-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.list-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-page-header h2::before {
+  content: "#";
+  color: #b22222;
+  font-weight: 700;
+}
+
+.list-page-header-btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list-page-header-btns .btn {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.list-page-header-btns .btn:hover {
+  border-bottom-color: #b22222;
+}
+
+.list-page-todos {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.list-page-counter {
+  text-align: right;
+  font-size: 0.75rem;
+}
