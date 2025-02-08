@@ -1,0 +1,19 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: currentColor;
+  max-width: max-content;
+}
+
+p.logo-text {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo svg {
+  font-size: 2rem;
+}
