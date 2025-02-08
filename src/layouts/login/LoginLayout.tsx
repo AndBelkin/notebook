@@ -5,13 +5,16 @@ import store from "../../app/store";
 import { User } from "../../app/userSlice";
 import { useAppDispatch } from "../../app/hooks";
 import { loginUser } from "../../app/authSlice/authSlice";
+import { useNavigate } from "react-router-dom";
 import "./LoginLayout.css";
+import { NavLink } from "react-router-dom";
 
 const LoginLayout: FC = () => {
   const [selectUser, setSelectUser] = useState<User | null>(null);
   const [login, setLogin] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const loginUpdate = (e: ChangeEvent<HTMLInputElement>) => setLogin(e.target.value);
   const passwordUpdate = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
   const passwordInput = <InputText type="password" label="your password" value={password} onChange={passwordUpdate} />;
@@ -24,8 +27,7 @@ const LoginLayout: FC = () => {
       if (selectUser.password !== password) alert("Неверный пароль от аккаунта!");
       else {
         dispatch(loginUser({ id: selectUser.id, login: selectUser.login }));
-        alert(`Пользователь ${selectUser.login} вошел в систему!`);
-        console.log(store.getState().auth);
+        navigate("/list");
       }
     }
   };
@@ -37,7 +39,10 @@ const LoginLayout: FC = () => {
       {selectUser ? passwordInput : false}
       <button onClick={clickButton}>Continue with login</button>
       <p className="text_small">
-        If you have not an account, click <span className="link">this link</span>
+        If you have not an account, click{" "}
+        <NavLink to="/register" className="link">
+          this link
+        </NavLink>
       </p>
     </main>
   );
