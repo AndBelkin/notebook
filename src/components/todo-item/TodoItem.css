@@ -1,0 +1,40 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #ebebeb;
+}
+
+.todo-item:hover {
+  border-radius: 0;
+  background-color: #d9d9d9;
+}
+
+.todo-item-checkbox svg {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.todo-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+
+.todo-item-title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.todo-item-description {
+  font-size: 0.75rem;
+}
+
+.todo-item.complete {
+  opacity: 0.5;
+}

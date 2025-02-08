@@ -1,0 +1,31 @@
+import { FC } from "react";
+import { TodoItemType } from "../../app/todoSlice";
+import { BiCheckbox, BiCheckboxChecked } from "react-icons/bi";
+import "./TodoItem.css";
+import { useAppDispatch } from "../../app/hooks";
+import { changeTodo } from "../../app/todoSlice/todoSlice";
+
+interface TodoItemProps {
+  element: TodoItemType;
+}
+
+const TodoItem: FC<TodoItemProps> = ({ element }: TodoItemProps) => {
+  const dispatch = useAppDispatch();
+  const checkboxIcon = element.isDone ? <BiCheckboxChecked /> : <BiCheckbox />;
+  const changeComplete = () => {
+    dispatch(changeTodo({ ...element, isDone: !element.isDone }));
+  };
+  return (
+    <div className={`todo-item ${element.isDone ? "complete" : ""}`}>
+      <div className="todo-item-checkbox" onClick={changeComplete}>
+        {checkboxIcon}
+      </div>
+      <div className="todo-item-content">
+        <p className="todo-item-title">{element.title}</p>
+        <p className="todo-item-description">{element.description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default TodoItem;
