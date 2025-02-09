@@ -1,0 +1,34 @@
+.textarea-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background-color: #ebebeb;
+  min-width: 400px;
+}
+
+.textarea-box label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.textarea-box textarea {
+  resize: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.5rem;
+  outline: none;
+  width: 100%;
+}
+
+.textarea-box:hover,
+.textarea-box:has(textarea:focus) {
+  border-color: #333;
+}
+
+.textarea-box:has(textarea:focus) {
+  outline: 1px solid #333;
+}
