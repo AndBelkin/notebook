@@ -21,5 +21,7 @@ const todoSlice = createSlice({
 });
 
 export const selectAllTodo = (state: RootState) => state.todos;
+export const selectUserTodo = (state: RootState) =>
+  state.todos.filter((todo) => todo.author === state.auth.user?.login);
 export const { addNewTodo, delTodo, changeTodo } = todoSlice.actions;
 export default todoSlice.reducer;

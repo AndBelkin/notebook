@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useAppSelector } from "../../app/hooks";
-import { selectAllTodo } from "../../app/todoSlice/todoSlice";
+import { selectUserTodo } from "../../app/todoSlice/todoSlice";
 import TodoItem from "../../components/todo-item/TodoItem";
 import "./TodoList.css";
 import Title from "../../components/title/Title";
 
 const TodoList: FC = () => {
-  const todoList = useAppSelector(selectAllTodo);
+  const todoList = useAppSelector(selectUserTodo);
   const renderTodoList = todoList.map((todo, key) => <TodoItem element={todo} key={key} />);
   return (
     <section className="todo-list">
