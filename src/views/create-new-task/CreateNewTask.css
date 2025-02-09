@@ -1,0 +1,21 @@
+.create-new-task {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.create-new-task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.create-new-task-form button {
+  margin: 0 auto;
+}
