@@ -1,4 +1,4 @@
-main.login-page {
+.login-page {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -14,10 +14,10 @@ main.login-page {
 }
 
 @media (width <= 430px) {
-  main.login-page h2 {
+  .login-page h2 {
     text-align: center;
   }
-  main.login-page {
+  .login-page {
     padding: 0 1rem;
   }
 }

@@ -1,4 +1,4 @@
-main.register-page {
+.register-page {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -8,10 +8,10 @@ main.register-page {
 }
 
 @media (width <= 430px) {
-  main.register-page {
+  .register-page {
     padding: 0 1rem;
   }
-  main.register-page h2 {
+  .register-page h2 {
     text-align: center;
   }
 }

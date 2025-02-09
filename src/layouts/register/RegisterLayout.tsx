@@ -9,6 +9,7 @@ import { addNewUser } from "../../app/userSlice/userSlice";
 import Title from "../../components/title/Title";
 import Button from "../../components/button/Button";
 import store from "../../app/store";
+import Form from "../../components/form/Form";
 
 const RegisterLayout: FC = () => {
   const [login, setLogin] = useState<string>("");
@@ -26,7 +27,7 @@ const RegisterLayout: FC = () => {
     navigate("/login");
   };
   return (
-    <main className="register-page">
+    <Form className="register-page">
       <Title level="h2">Registration new account</Title>
       <Title level="h6">for Notebook</Title>
       <InputText label="your login" value={login} onChange={loginUpdate} />
@@ -38,7 +39,7 @@ const RegisterLayout: FC = () => {
           this link
         </NavLink>
       </p>
-    </main>
+    </Form>
   );
 };
 

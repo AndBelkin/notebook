@@ -10,6 +10,7 @@ import "./LoginLayout.css";
 import { NavLink } from "react-router-dom";
 import Title from "../../components/title/Title";
 import Button from "../../components/button/Button";
+import Form from "../../components/form/Form";
 
 const LoginLayout: FC = () => {
   const [selectUser, setSelectUser] = useState<User | null>(null);
@@ -42,14 +43,14 @@ const LoginLayout: FC = () => {
     }
   };
   return (
-    <main className="login-page">
+    <Form className="login-page">
       <Title level="h2">Welcome to notebook</Title>
       <Title level="h6">Your easy task manager</Title>
       <InputText label="your login" value={login} onChange={loginUpdate} disabled={selectUser ? true : false} />
       {selectUser ? passwordInput : null}
       <div className="login-page-btns">
-        {selectUser ? buttonBack : null}
         <Button onClick={clickButton}>Continue with login</Button>
+        {selectUser ? buttonBack : null}
       </div>
       <p className="text_small">
         If you have not an account, click{" "}
@@ -57,7 +58,7 @@ const LoginLayout: FC = () => {
           this link
         </NavLink>
       </p>
-    </main>
+    </Form>
   );
 };
 

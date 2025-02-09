@@ -8,6 +8,7 @@ import { addNewTodo } from "../../app/todoSlice/todoSlice";
 import { createTodoItem } from ".";
 import "./CreateNewTask.css";
 import InputDate from "../../components/input-date/InputDate";
+import Form from "../../components/form/Form";
 
 const CreateNewTask: FC = () => {
   const [title, setTitle] = useState<string>("");
@@ -24,13 +25,13 @@ const CreateNewTask: FC = () => {
 
   return (
     <section className="create-new-task">
-      <form className="create-new-task-form" onSubmit={(e: React.FormEvent<HTMLFormElement>) => e.preventDefault()}>
+      <Form className="create-new-task-form">
         <Title level="h2">Create new task</Title>
         <InputText label="New todo title" value={title} onChange={(e) => setTitle(e.target.value)} />
         <Textarea label="New todo description" value={description} onChange={(e) => setDescription(e.target.value)} />
         <InputDate label="Finish by" value={finishBy} onChange={(e) => setFinishBy(e.target.value)} />
         <Button onClick={createTask}>Create new task</Button>
-      </form>
+      </Form>
     </section>
   );
 };
