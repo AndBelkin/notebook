@@ -40,10 +40,13 @@ button.outline {
 }
 
 button.icon {
+  padding: 0;
+  color: currentColor;
   border: none;
   background-color: rgba(0, 0, 0, 0);
 }
 
 button.icon:focus {
   outline: 2px dashed #333;
+  outline-offset: 0;
 }
