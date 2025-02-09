@@ -32,3 +32,9 @@
 .input-box:has(input:focus) {
   outline: 1px solid #333;
 }
+
+@media (width <= 430px) {
+  .input-box {
+    min-width: max-content;
+  }
+}

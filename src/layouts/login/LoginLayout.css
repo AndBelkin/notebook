@@ -6,3 +6,12 @@ main.login-page {
   justify-content: center;
   gap: 0.5rem;
 }
+
+@media (width <= 430px) {
+  main.login-page h2 {
+    text-align: center;
+  }
+  main.login-page {
+    padding: 0 1rem;
+  }
+}

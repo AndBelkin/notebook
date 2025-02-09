@@ -4,3 +4,11 @@
   align-items: flex-start;
   justify-content: space-between;
 }
+
+@media (width <= 430px) {
+  .list-page {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+}

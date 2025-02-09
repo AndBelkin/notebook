@@ -16,3 +16,9 @@
 .user-nav-login {
   font-size: 1.5rem;
 }
+
+@media (width <= 430px) {
+  .user-nav-login {
+    font-size: 1rem;
+  }
+}

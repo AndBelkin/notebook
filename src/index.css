@@ -38,3 +38,9 @@ a {
   color: #b22222;
   text-decoration: underline;
 }
+
+@media (width <= 530px) {
+  .container {
+    padding: 1rem;
+  }
+}

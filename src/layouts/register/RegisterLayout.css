@@ -6,3 +6,12 @@ main.register-page {
   justify-content: center;
   gap: 0.5rem;
 }
+
+@media (width <= 430px) {
+  main.register-page {
+    padding: 0 1rem;
+  }
+  main.register-page h2 {
+    text-align: center;
+  }
+}
