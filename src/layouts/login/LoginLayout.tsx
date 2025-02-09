@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import "./LoginLayout.css";
 import { NavLink } from "react-router-dom";
 import Title from "../../components/title/Title";
+import Button from "../../components/button/Button";
 
 const LoginLayout: FC = () => {
   const [selectUser, setSelectUser] = useState<User | null>(null);
@@ -38,7 +39,7 @@ const LoginLayout: FC = () => {
       <Title level="h6">Your easy task manager</Title>
       <InputText label="your login" value={login} onChange={loginUpdate} disabled={selectUser ? true : false} />
       {selectUser ? passwordInput : false}
-      <button onClick={clickButton}>Continue with login</button>
+      <Button onClick={clickButton}>Continue with login</Button>
       <p className="text_small">
         If you have not an account, click{" "}
         <NavLink to="/register" className="link">

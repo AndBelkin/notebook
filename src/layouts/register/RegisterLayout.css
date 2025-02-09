@@ -6,28 +6,3 @@ main.register-page {
   justify-content: center;
   gap: 0.5rem;
 }
-
-.register-page button {
-  padding: 0.5rem 1rem;
-  user-select: none;
-  cursor: pointer;
-  border: none;
-  border-radius: 0.5rem;
-  color: #fff;
-  font-family: "Montserrat", serif;
-  font-size: 1rem;
-  background-color: #333;
-  transition: border-radius 0.3s;
-}
-
-.register-page button:hover,
-.register-page button:focus {
-  border-radius: 0;
-  outline: none;
-}
-
-.register-page button:active {
-  border-radius: 0.5rem;
-  outline: 2px dashed #333;
-  outline-offset: 0.25rem;
-}

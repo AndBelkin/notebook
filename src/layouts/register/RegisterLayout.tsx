@@ -7,6 +7,7 @@ import "./RegisterLayout.css";
 import { User } from "../../app/userSlice";
 import { addNewUser } from "../../app/userSlice/userSlice";
 import Title from "../../components/title/Title";
+import Button from "../../components/button/Button";
 
 const RegisterLayout: FC = () => {
   const [login, setLogin] = useState<string>("");
@@ -26,7 +27,7 @@ const RegisterLayout: FC = () => {
       <Title level="h6">for Notebook</Title>
       <InputText label="your login" value={login} onChange={loginUpdate} />
       <InputText type="password" label="your password" value={password} onChange={passwordUpdate} />
-      <button onClick={clickButton}>Create new account for Notebook</button>
+      <Button onClick={clickButton}>Create new account for Notebook</Button>
       <p className="text_small">
         If you have an account, click{" "}
         <NavLink to="/login" className="link">
