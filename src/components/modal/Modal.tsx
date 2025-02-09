@@ -20,7 +20,7 @@ export const Modal: FC<ModalProps> = ({ children, isOpen, onExit }: ModalProps) 
       overlayClassName="overlay"
     >
       <Button type="icon" afterIcon={<IoCloseOutline />} onClick={onExit} className="modal-btn" />
-      <div className="modal-conyent">{children}</div>
+      <div className="modal-content">{children}</div>
     </ReactModal>
   );
 };

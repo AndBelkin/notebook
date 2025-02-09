@@ -1,0 +1,29 @@
+.todo-item-full {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  min-width: 500px;
+}
+
+.todo-item-full-created {
+  font-size: 0.75rem;
+}
+
+.todo-item-full-description {
+  word-wrap: normal;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid #b22222;
+  background-color: #ebebeb;
+}
+
+.todo-item-full button {
+  align-self: center;
+}
+
+@media (width <= 430px) {
+  .todo-item-full {
+    min-width: max-content;
+  }
+}
