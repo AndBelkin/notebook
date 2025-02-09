@@ -5,8 +5,7 @@ import Textarea from "../../components/textarea/Textarea";
 import Button from "../../components/button/Button";
 import { useAppDispatch } from "../../app/hooks";
 import { addNewTodo } from "../../app/todoSlice/todoSlice";
-import { TodoItemType } from "../../app/todoSlice";
-import store from "../../app/store";
+import { createTodoItem } from ".";
 import "./CreateNewTask.css";
 
 const CreateNewTask: FC = () => {
@@ -15,17 +14,11 @@ const CreateNewTask: FC = () => {
   const dispatch = useAppDispatch();
   const createTask = () => {
     if (!title) return alert("Title is empty!");
-    const newTodo: TodoItemType = {
-      id: Math.random(),
-      title,
-      description,
-      isDone: false,
-      author: store.getState().auth.user!.login,
-    };
-    dispatch(addNewTodo(newTodo));
+    dispatch(addNewTodo(createTodoItem(title, description)));
     setTitle("");
     setDescription("");
   };
+
   return (
     <section className="create-new-task">
       <form className="create-new-task-form" onSubmit={(e: React.FormEvent<HTMLFormElement>) => e.preventDefault()}>
