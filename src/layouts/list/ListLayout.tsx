@@ -1,13 +1,13 @@
 import { FC } from "react";
 import CreateNewTask from "../../views/create-new-task/CreateNewTask";
-import TodoList from "../../views/todo-list/TodoList";
 import "./ListLayout.css";
+import TodoListView from "../../views/todo-list/TodoListView";
 
 const ListLayout: FC = () => {
   return (
     <main className="list-page">
       <CreateNewTask />
-      <TodoList />
+      <TodoListView />
     </main>
   );
 };
