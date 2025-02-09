@@ -1,37 +1,49 @@
-button,
-.btn {
+button {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: center;
+  max-width: max-content;
+  gap: 0.5rem;
 
-  cursor: pointer;
+  padding: 0.5rem 1rem;
   user-select: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  border-style: solid;
-  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  font-family: "Montserrat", serif;
+  font-size: 1rem;
+  transition: border-radius 0.3s;
 }
 
-.btn_solid,
-.btn_outline:hover {
+button:hover,
+button:focus {
+  border-radius: 0;
+  outline: none;
+}
+
+button:active {
+  border-radius: 0.5rem;
+  outline: 2px dashed #333;
+  outline-offset: 0.25rem;
+}
+
+button.solid {
   color: #fff;
-  background-color: #b22222;
-  border-color: #b22222;
+  background-color: #333;
 }
 
-.btn_solid:hover,
-.btn_outline {
-  color: #b22222;
-  background-color: #fff;
-  border-color: #b22222;
-}
-
-.btn_icon {
-  color: currentColor;
+button.outline {
+  border-color: #333;
+  color: #333;
   background-color: rgba(0, 0, 0, 0);
-  border-color: rgba(0, 0, 0, 0);
 }
 
-.btn_icon:hover {
-  color: #b22222;
+button.icon {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button.icon:focus {
+  outline: 2px dashed #333;
 }

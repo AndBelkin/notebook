@@ -1,23 +1,22 @@
 import { FC, ReactElement } from "react";
-import { IconType } from "react-icons";
 import "./Button.css";
 
 interface ButtonProps {
-  children: string;
-  beforeIcon?: ReactElement<IconType>;
-  afterIcon?: ReactElement<IconType>;
-  className?: string;
+  children?: string;
+  beforeIcon?: ReactElement;
+  afterIcon?: ReactElement;
   type?: "solid" | "outline" | "icon";
+  className?: string;
   onClick: () => void;
 }
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const buttonStyle = `btn btn_${props.type || "solid"} ${props.className || ""}`;
+  const buttonStyle = `${props.className || ""} ${props.type || "solid"}`;
   return (
     <button className={buttonStyle} onClick={props.onClick}>
-      {props.beforeIcon}
+      {props.beforeIcon || null}
       {props.children}
-      {props.afterIcon}
+      {props.afterIcon || null}
     </button>
   );
 };
