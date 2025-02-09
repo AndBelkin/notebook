@@ -8,6 +8,7 @@ import { User } from "../../app/userSlice";
 import { addNewUser } from "../../app/userSlice/userSlice";
 import Title from "../../components/title/Title";
 import Button from "../../components/button/Button";
+import store from "../../app/store";
 
 const RegisterLayout: FC = () => {
   const [login, setLogin] = useState<string>("");
@@ -17,6 +18,9 @@ const RegisterLayout: FC = () => {
   const loginUpdate = (e: ChangeEvent<HTMLInputElement>) => setLogin(e.target.value);
   const passwordUpdate = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
   const clickButton = () => {
+    if (store.getState().users.find((user) => user.login === login))
+      return alert("The user with this login already exists.");
+    if (password.length < 6) return alert("The password must contain at least six characters.");
     const newUser: User = { id: Math.random(), login, password };
     dispatch(addNewUser(newUser));
     navigate("/login");
