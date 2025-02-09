@@ -8,5 +8,8 @@ export const createTodoItem = (title: string, description: string): TodoItemType
 
 const getTodayDate = () => {
   const today = new Date();
-  return `${today.toLocaleDateString} ${today.toLocaleTimeString}`;
+  const date = today.toLocaleDateString();
+  const time = today.toLocaleTimeString().split(":").slice(0, 2).join(":");
+  console.log(time);
+  return `${date} ${time}`;
 };

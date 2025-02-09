@@ -38,3 +38,14 @@
 .todo-item.complete {
   opacity: 0.5;
 }
+
+.todo-item-created {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.5rem;
+}
+
+.todo-item-created svg {
+  margin-top: -1px;
+}

@@ -4,6 +4,7 @@ import { BiCheckbox, BiCheckboxChecked } from "react-icons/bi";
 import "./TodoItem.css";
 import { useAppDispatch } from "../../app/hooks";
 import { changeTodo } from "../../app/todoSlice/todoSlice";
+import { FaRegCalendar } from "react-icons/fa";
 
 interface TodoItemProps {
   element: TodoItemType;
@@ -23,6 +24,10 @@ const TodoItem: FC<TodoItemProps> = ({ element }: TodoItemProps) => {
       <div className="todo-item-content">
         <p className="todo-item-title">{element.title}</p>
         <p className="todo-item-description">{element.description}</p>
+        <p className="todo-item-created">
+          <FaRegCalendar />
+          {`Created: ${element.created}`}
+        </p>
       </div>
     </div>
   );
