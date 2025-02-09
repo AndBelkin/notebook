@@ -5,6 +5,7 @@ import "./TodoItem.css";
 import { useAppDispatch } from "../../app/hooks";
 import { changeTodo } from "../../app/todoSlice/todoSlice";
 import { FaRegCalendar } from "react-icons/fa";
+import FinishByBox from "./finishBy-box/FinishByBox";
 
 interface TodoItemProps {
   element: TodoItemType;
@@ -24,10 +25,11 @@ const TodoItem: FC<TodoItemProps> = ({ element }: TodoItemProps) => {
       <div className="todo-item-content">
         <p className="todo-item-title">{element.title}</p>
         <p className="todo-item-description">{element.description}</p>
-        <p className="todo-item-created">
+        <p className="todo-item-info-line">
           <FaRegCalendar />
           {`Created: ${element.created}`}
         </p>
+        {element.finishBy && <FinishByBox date={element.finishBy} />}
       </div>
     </div>
   );
