@@ -8,6 +8,7 @@ import { loginUser } from "../../app/authSlice/authSlice";
 import { useNavigate } from "react-router-dom";
 import "./LoginLayout.css";
 import { NavLink } from "react-router-dom";
+import Title from "../../components/title/Title";
 
 const LoginLayout: FC = () => {
   const [selectUser, setSelectUser] = useState<User | null>(null);
@@ -33,8 +34,8 @@ const LoginLayout: FC = () => {
   };
   return (
     <main className="login-page">
-      <h2>Welcome to notebook</h2>
-      <h6>Your easy task manager</h6>
+      <Title level="h2">Welcome to notebook</Title>
+      <Title level="h6">Your easy task manager</Title>
       <InputText label="your login" value={login} onChange={loginUpdate} disabled={selectUser ? true : false} />
       {selectUser ? passwordInput : false}
       <button onClick={clickButton}>Continue with login</button>

@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import "./RegisterLayout.css";
 import { User } from "../../app/userSlice";
 import { addNewUser } from "../../app/userSlice/userSlice";
+import Title from "../../components/title/Title";
 
 const RegisterLayout: FC = () => {
   const [login, setLogin] = useState<string>("");
@@ -21,8 +22,8 @@ const RegisterLayout: FC = () => {
   };
   return (
     <main className="register-page">
-      <h2>Registration new account</h2>
-      <h6>for Notebook</h6>
+      <Title level="h2">Registration new account</Title>
+      <Title level="h6">for Notebook</Title>
       <InputText label="your login" value={login} onChange={loginUpdate} />
       <InputText type="password" label="your password" value={password} onChange={passwordUpdate} />
       <button onClick={clickButton}>Create new account for Notebook</button>
