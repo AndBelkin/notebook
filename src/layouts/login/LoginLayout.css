@@ -7,6 +7,12 @@ main.login-page {
   gap: 0.5rem;
 }
 
+.login-page-btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 @media (width <= 430px) {
   main.login-page h2 {
     text-align: center;

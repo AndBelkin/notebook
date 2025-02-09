@@ -20,6 +20,14 @@ const LoginLayout: FC = () => {
   const loginUpdate = (e: ChangeEvent<HTMLInputElement>) => setLogin(e.target.value);
   const passwordUpdate = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
   const passwordInput = <InputText type="password" label="your password" value={password} onChange={passwordUpdate} />;
+  const clickBack = () => {
+    setSelectUser(null);
+  };
+  const buttonBack = (
+    <Button type="outline" onClick={clickBack}>
+      Back
+    </Button>
+  );
   const clickButton = () => {
     if (selectUser === null) {
       const user = getUserIndex(store.getState(), login);
@@ -38,8 +46,11 @@ const LoginLayout: FC = () => {
       <Title level="h2">Welcome to notebook</Title>
       <Title level="h6">Your easy task manager</Title>
       <InputText label="your login" value={login} onChange={loginUpdate} disabled={selectUser ? true : false} />
-      {selectUser ? passwordInput : false}
-      <Button onClick={clickButton}>Continue with login</Button>
+      {selectUser ? passwordInput : null}
+      <div className="login-page-btns">
+        {selectUser ? buttonBack : null}
+        <Button onClick={clickButton}>Continue with login</Button>
+      </div>
       <p className="text_small">
         If you have not an account, click{" "}
         <NavLink to="/register" className="link">
