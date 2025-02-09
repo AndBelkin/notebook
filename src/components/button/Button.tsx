@@ -11,7 +11,7 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const buttonStyle = `${props.className || ""} ${props.type || "solid"}`;
+  const buttonStyle = `${props.type || "solid"} ${props.className || ""}`;
   return (
     <button className={buttonStyle} onClick={props.onClick}>
       {props.beforeIcon || null}

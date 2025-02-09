@@ -39,7 +39,7 @@ button.outline {
   background-color: rgba(0, 0, 0, 0);
 }
 
-button.icon {
+.icon {
   padding: 0;
   color: currentColor;
   border: none;
