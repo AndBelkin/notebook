@@ -1,10 +1,11 @@
 export interface TodoItemType {
   id: number;
   title: string;
-  description?: string;
+  description?: string | null;
   isDone: boolean;
   author: string;
   created: string;
+  finishBy?: string | null;
 }
 
 export const initialState: TodoItemType[] = [
@@ -14,6 +15,7 @@ export const initialState: TodoItemType[] = [
     description: "Somebody description...",
     isDone: false,
     author: "admin",
-    created: "02/09/2025 13:30:00",
+    created: "02/09/2025 1:30",
+    finishBy: "02/10/2025",
   },
 ];

@@ -1,9 +1,9 @@
 import store from "../../app/store";
 import { TodoItemType } from "../../app/todoSlice";
 
-export const createTodoItem = (title: string, description: string): TodoItemType => {
+export const createTodoItem = (title: string, description: string, finishBy: string | null): TodoItemType => {
   const author = store.getState().auth.user!.login;
-  return { id: Math.random(), title, description, isDone: false, author, created: getTodayDate() };
+  return { id: Math.random(), title, description, isDone: false, author, created: getTodayDate(), finishBy };
 };
 
 const getTodayDate = () => {
