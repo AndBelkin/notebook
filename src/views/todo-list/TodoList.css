@@ -1,0 +1,38 @@
+.todo-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.todo-list-header-btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.todo-list-header-btns .btn {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.todo-list-header-btns .btn:hover {
+  border-bottom-color: #b22222;
+}
+
+.todo-list-items {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.todo-list-counter {
+  text-align: right;
+  font-size: 0.75rem;
+}
