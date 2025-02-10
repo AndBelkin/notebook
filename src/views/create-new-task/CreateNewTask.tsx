@@ -5,7 +5,7 @@ import Textarea from "../../components/textarea/Textarea";
 import Button from "../../components/button/Button";
 import { useAppDispatch } from "../../app/hooks";
 import { addNewTodo } from "../../app/todoSlice/todoSlice";
-import { createTodoItem } from ".";
+import { createTodoItem, getTodayDate } from ".";
 import "./CreateNewTask.css";
 import InputDate from "../../components/input-date/InputDate";
 import Form from "../../components/form/Form";
@@ -14,7 +14,7 @@ import InputCheckbox from "../../components/input-checkbox/InputCheckbox";
 const CreateNewTask: FC = () => {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [finishBy, setFinishBy] = useState<string>("");
+  const [finishBy, setFinishBy] = useState<string>(getTodayDate());
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const createTask = () => {
@@ -23,7 +23,7 @@ const CreateNewTask: FC = () => {
     dispatch(addNewTodo(createTodoItem(title, description, finishBy)));
     setTitle("");
     setDescription("");
-    setFinishBy("");
+    setFinishBy(getTodayDate());
   };
   const dateElement = <InputDate label="Finish by" value={finishBy} onChange={(e) => setFinishBy(e.target.value)} />;
 
