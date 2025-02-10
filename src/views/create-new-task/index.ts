@@ -10,6 +10,5 @@ const getTodayDate = () => {
   const today = new Date();
   const date = today.toLocaleDateString();
   const time = today.toLocaleTimeString().split(":").slice(0, 2).join(":");
-  console.log(time);
   return `${date} ${time}`;
 };
