@@ -21,6 +21,9 @@ export const messages = {
     finishBy: "Finish by",
     createTask: "Create new task",
     logOut: "Log out",
+    searchYourTask: "Search your tasks",
+    search: "Search",
+    close: "Close",
   },
   [LANG.RUSSIAN]: {
     welcomeToApp: "Добро пожаловать в Notebook",
@@ -42,5 +45,8 @@ export const messages = {
     finishBy: "Выполнить до",
     createTask: "Создать задачу",
     logOut: "Выйти",
+    searchYourTask: "Поиск задач",
+    search: "Поиск",
+    close: "Закрыть",
   },
 };

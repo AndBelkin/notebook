@@ -7,6 +7,7 @@ import TodoList from "../todo-list/TodoList";
 import { filterTasks } from ".";
 import "./SearchTask.css";
 import Title from "../../components/title/Title";
+import { FormattedMessage } from "react-intl";
 
 interface SearchTaskProps {
   todos: TodoItemType[];
@@ -24,10 +25,16 @@ const SearchTask: FC<SearchTaskProps> = ({ todos, onExit }: SearchTaskProps) => 
   };
   return (
     <Form className="search-page">
-      <Title level="h4">Search your tasks</Title>
-      <InputText label="Search" value={searchInput} onChange={changeHandler} />
+      <Title level="h4">
+        <FormattedMessage id="searchYourTask" />
+      </Title>
+      <InputText label={<FormattedMessage id="search" />} value={searchInput} onChange={changeHandler} />
       <TodoList todos={searchTasks} />
-      {onExit ? <Button onClick={onExit}>Close</Button> : null}
+      {onExit ? (
+        <Button onClick={onExit}>
+          <FormattedMessage id="close" />
+        </Button>
+      ) : null}
     </Form>
   );
 };
