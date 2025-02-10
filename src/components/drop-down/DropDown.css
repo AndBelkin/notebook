@@ -39,3 +39,13 @@
   color: #fff;
   background-color: #b22222;
 }
+
+/* Dark mode */
+
+.dark .drop-down-list p {
+  color: #333;
+}
+
+.dark .drop-down-list p:hover {
+  color: #fff;
+}

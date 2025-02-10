@@ -32,3 +32,9 @@
 .checkbox.checked .checkbox-ball {
   background-color: #b22222;
 }
+
+/* Dark mode */
+
+.dark .checkbox-ball {
+  background-color: #333;
+}

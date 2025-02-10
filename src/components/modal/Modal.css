@@ -31,3 +31,11 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 80%);
 }
+
+/* Dark mode */
+
+.dark .modal {
+  color: #fff;
+  background-color: #333;
+  border: 1px solid #fff;
+}

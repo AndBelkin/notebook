@@ -50,3 +50,17 @@ button.icon:focus {
   outline: 2px dashed #333;
   outline-offset: 0;
 }
+
+/* Dark mode */
+
+.dark button.solid {
+  color: #333;
+  background-color: #fff;
+  outline-color: #fff;
+}
+
+.dark button.outline {
+  color: #fff;
+  border-color: #fff;
+  outline-color: #fff;
+}

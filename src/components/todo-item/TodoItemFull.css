@@ -22,6 +22,12 @@
   align-self: center;
 }
 
+/* Dark mode */
+
+.dark .todo-item-full-description {
+  color: #333;
+}
+
 @media (width <= 430px) {
   .todo-item-full {
     min-width: max-content;

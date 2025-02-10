@@ -72,6 +72,12 @@
   transform: translateX(0);
 }
 
+/* Dark mode */
+
+.dark .todo-item {
+  color: #333;
+}
+
 @media (width <= 430px) {
   .todo-item-options {
     position: static;

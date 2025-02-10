@@ -33,6 +33,13 @@
   outline: 1px solid #333;
 }
 
+/* Dark mode */
+
+.dark .input-box {
+  color: #333;
+  background-color: #d9d9d9;
+}
+
 @media (width <= 430px) {
   .input-box {
     min-width: max-content;
