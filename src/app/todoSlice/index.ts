@@ -15,7 +15,7 @@ export const initialState: TodoItemType[] = [
     description: "Somebody description...",
     isDone: false,
     author: "admin",
-    created: "02/09/2025 1:30",
-    finishBy: "02/10/2025",
+    created: "2025-02-10 5:04",
+    finishBy: "2025-02-10",
   },
 ];
