@@ -17,6 +17,16 @@
   font-size: 1.5rem;
 }
 
+.header-dark-mode-box {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.header-dark-mode-box:hover {
+  color: #b22222;
+}
+
 @media (width <= 430px) {
   .user-nav-login {
     font-size: 1rem;
