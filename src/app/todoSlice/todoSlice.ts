@@ -15,7 +15,7 @@ const todoSlice = createSlice({
     },
     delTodo: (state, action: PayloadAction<TodoItemType>) => {
       const idx = state.findIndex((item) => item.id === action.payload.id);
-      if (idx !== -1) state.splice(idx);
+      if (idx !== -1) state.splice(idx, 1);
     },
   },
 });
