@@ -7,10 +7,16 @@
   width: 100%;
 }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .user-nav {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .user-nav-login {
@@ -23,11 +29,23 @@
   margin-top: 0.5rem;
 }
 
-.header-dark-mode-box:hover {
+.header-dark-mode-box:hover,
+.select-lang:hover {
   color: #b22222;
 }
 
+.select-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
 @media (width <= 430px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
   .user-nav-login {
     font-size: 1rem;
   }
