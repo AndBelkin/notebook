@@ -4,6 +4,7 @@ import Button from "../../../components/button/Button";
 import { useAppDispatch } from "../../../app/hooks";
 import { logoutUser } from "../../../app/authSlice/authSlice";
 import DarkModeBox from "../dark-mode/DarkModeBox";
+import { FormattedMessage } from "react-intl";
 
 interface UserNavProps {
   user: AuthUser;
@@ -17,7 +18,7 @@ const UserNav: FC<UserNavProps> = ({ user }: UserNavProps) => {
       <p className="user-nav-login">{user.login}</p>
       <DarkModeBox />
       <Button type="outline" onClick={logout}>
-        Log out
+        <FormattedMessage id="logOut" />
       </Button>
     </nav>
   );

@@ -20,6 +20,7 @@ export const messages = {
     setDay: "Set a day?",
     finishBy: "Finish by",
     createTask: "Create new task",
+    logOut: "Log out",
   },
   [LANG.RUSSIAN]: {
     welcomeToApp: "Добро пожаловать в Notebook",
@@ -40,5 +41,6 @@ export const messages = {
     setDay: "Выбрать день завершения?",
     finishBy: "Выполнить до",
     createTask: "Создать задачу",
+    logOut: "Выйти",
   },
 };
