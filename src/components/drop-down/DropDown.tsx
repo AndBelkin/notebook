@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { GrSort } from "react-icons/gr";
 import "./DropDown.css";
+import { FormattedMessage } from "react-intl";
 
 interface DropDownProps {
   items: string[];
@@ -19,13 +20,13 @@ const DropDown: FC<DropDownProps> = ({ items, getValue }: DropDownProps) => {
   const getList = items.filter((item) => item !== mainItem);
   const renderList = getList.map((item, key) => (
     <p key={key} onClick={() => clickHandler(item)}>
-      {item}
+      <FormattedMessage id={item} />
     </p>
   ));
   return (
     <div className={dropBoxStyle} onMouseLeave={() => setIsOpen(false)}>
       <div className="drop-down-main-item" onClick={() => setIsOpen(!isOpen)}>
-        <p>{mainItem}</p>
+        <FormattedMessage id={mainItem} />
         <GrSort />
       </div>
       <div className="drop-down-list">{renderList}</div>

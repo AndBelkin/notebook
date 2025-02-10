@@ -9,6 +9,7 @@ import FinishByBox from "./finishBy-box/FinishByBox";
 import Button from "../button/Button";
 import { Modal } from "../modal/Modal";
 import TodoItemFull from "./TodoItemFull";
+import { FormattedMessage } from "react-intl";
 
 interface TodoItemProps {
   element: TodoItemType;
@@ -32,7 +33,8 @@ const TodoItem: FC<TodoItemProps> = ({ element }: TodoItemProps) => {
         <p className="todo-item-description">{element.description}</p>
         <p className="todo-item-info-line">
           <FaRegCalendar />
-          {`Created: ${element.created}`}
+          <FormattedMessage id="created" />
+          {` ${element.created}`}
         </p>
         {element.finishBy && <FinishByBox date={element.finishBy} />}
       </div>

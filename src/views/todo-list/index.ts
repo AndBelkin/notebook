@@ -1,9 +1,9 @@
 import { TodoItemType } from "../../app/todoSlice";
 
 enum SortMethods {
-  allTask = "All task",
-  complete = "Current",
-  today = "Today",
+  allTask = "allTask",
+  complete = "current",
+  today = "today",
 }
 
 export const sortMethods = [SortMethods.allTask, SortMethods.complete, SortMethods.today];
