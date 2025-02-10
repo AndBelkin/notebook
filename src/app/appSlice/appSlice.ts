@@ -1,12 +1,14 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AppLanguges, initialState } from ".";
+import { createSlice } from "@reduxjs/toolkit";
+import { initialState } from ".";
+import { LANG } from "../../i18n/locales";
 
 const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
-    changeLang: (state, action: PayloadAction<AppLanguges>) => {
-      state.lang = action.payload;
+    changeLang: (state) => {
+      if (state.lang === LANG.ENGLISH) state.lang = LANG.RUSSIAN;
+      else state.lang = LANG.ENGLISH;
     },
     changeDarkMode: (state) => {
       state.darkMode = !state.darkMode;

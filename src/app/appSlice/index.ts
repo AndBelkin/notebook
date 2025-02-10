@@ -1,11 +1,11 @@
-export type AppLanguges = "en" | "ru";
+import { LANG } from "../../i18n/locales";
 
 export interface ApplicationState {
-  lang: AppLanguges;
+  lang: string;
   darkMode: boolean;
 }
 
 export const initialState: ApplicationState = {
-  lang: "en",
+  lang: LANG.ENGLISH,
   darkMode: false,
 };

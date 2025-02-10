@@ -11,6 +11,7 @@ import { NavLink } from "react-router-dom";
 import Title from "../../components/title/Title";
 import Button from "../../components/button/Button";
 import Form from "../../components/form/Form";
+import { FormattedMessage } from "react-intl";
 
 const LoginLayout: FC = () => {
   const [selectUser, setSelectUser] = useState<User | null>(null);
@@ -20,13 +21,20 @@ const LoginLayout: FC = () => {
   const navigate = useNavigate();
   const loginUpdate = (e: ChangeEvent<HTMLInputElement>) => setLogin(e.target.value);
   const passwordUpdate = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
-  const passwordInput = <InputText type="password" label="your password" value={password} onChange={passwordUpdate} />;
+  const passwordInput = (
+    <InputText
+      type="password"
+      label={<FormattedMessage id="yourPassword" />}
+      value={password}
+      onChange={passwordUpdate}
+    />
+  );
   const clickBack = () => {
     setSelectUser(null);
   };
   const buttonBack = (
     <Button type="outline" onClick={clickBack}>
-      Back
+      <FormattedMessage id="backBtn" />
     </Button>
   );
   const clickButton = () => {
@@ -44,18 +52,29 @@ const LoginLayout: FC = () => {
   };
   return (
     <Form className="login-page">
-      <Title level="h2">Welcome to notebook</Title>
-      <Title level="h6">Your easy task manager</Title>
-      <InputText label="your login" value={login} onChange={loginUpdate} disabled={selectUser ? true : false} />
+      <Title level="h2">
+        <FormattedMessage id="welcomeToApp" />
+      </Title>
+      <Title level="h6">
+        <FormattedMessage id="yourEasyTaskManager" />
+      </Title>
+      <InputText
+        label={<FormattedMessage id="yourLogin" />}
+        value={login}
+        onChange={loginUpdate}
+        disabled={selectUser ? true : false}
+      />
       {selectUser ? passwordInput : null}
       <div className="login-page-btns">
-        <Button onClick={clickButton}>Continue with login</Button>
+        <Button onClick={clickButton}>
+          <FormattedMessage id="continueBtn" />
+        </Button>
         {selectUser ? buttonBack : null}
       </div>
       <p className="text_small">
-        If you have not an account, click{" "}
+        <FormattedMessage id="ifNotLogin" />
         <NavLink to="/register" className="link">
-          this link
+          <FormattedMessage id="thisLink" />
         </NavLink>
       </p>
     </Form>

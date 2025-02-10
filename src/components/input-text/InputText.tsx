@@ -3,7 +3,7 @@ import "./InputText.css";
 
 interface InputTextProps {
   value: string;
-  label?: string;
+  label?: string | React.ReactNode;
   placeholder?: string;
   className?: string;
   disabled?: boolean;

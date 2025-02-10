@@ -2,7 +2,7 @@ import { FC, ReactElement } from "react";
 import "./Button.css";
 
 interface ButtonProps {
-  children?: string;
+  children?: string | React.ReactNode;
   beforeIcon?: ReactElement;
   afterIcon?: ReactElement;
   type?: "solid" | "outline" | "icon";
