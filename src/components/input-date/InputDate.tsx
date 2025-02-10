@@ -1,9 +1,9 @@
-import { ChangeEvent, FC } from "react";
+import React, { ChangeEvent, FC } from "react";
 import "./InputDate.css";
 
 interface InputDateProps {
   value: string;
-  label?: string;
+  label?: string | React.ReactNode;
   className?: string;
   disabled?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;

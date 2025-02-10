@@ -3,7 +3,7 @@ import "./InputCheckbox.css";
 
 interface InputCheckboxProps {
   checked: boolean;
-  label: string;
+  label: string | React.ReactNode;
   className?: string;
   onChange: () => void;
 }

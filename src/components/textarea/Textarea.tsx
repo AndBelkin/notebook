@@ -3,7 +3,7 @@ import "./Textarea.css";
 
 interface TextreaProps {
   value: string;
-  label?: string;
+  label?: string | React.ReactNode;
   placeholder?: string;
   className?: string;
   disabled?: boolean;
