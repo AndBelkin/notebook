@@ -10,6 +10,7 @@ import Title from "../../components/title/Title";
 import Button from "../../components/button/Button";
 import store from "../../app/store";
 import Form from "../../components/form/Form";
+import { FormattedMessage } from "react-intl";
 
 const RegisterLayout: FC = () => {
   const [login, setLogin] = useState<string>("");
@@ -28,15 +29,24 @@ const RegisterLayout: FC = () => {
   };
   return (
     <Form className="register-page">
-      <Title level="h2">Registration new account</Title>
-      <Title level="h6">for Notebook</Title>
-      <InputText label="your login" value={login} onChange={loginUpdate} />
-      <InputText type="password" label="your password" value={password} onChange={passwordUpdate} />
-      <Button onClick={clickButton}>Create new account for Notebook</Button>
+      <Title level="h2">
+        <FormattedMessage id="registerNewAccount" />
+      </Title>
+      <Title level="h6">
+        <FormattedMessage id="forNotebook" />
+      </Title>
+      <InputText label={<FormattedMessage id="yourLogin" />} value={login} onChange={loginUpdate} />
+      <InputText
+        type="password"
+        label={<FormattedMessage id="yourPassword" />}
+        value={password}
+        onChange={passwordUpdate}
+      />
+      <Button onClick={clickButton}>{<FormattedMessage id="createNewAccountMsg" />}</Button>
       <p className="text_small">
-        If you have an account, click{" "}
+        {<FormattedMessage id="ifHaveLogin" />}
         <NavLink to="/login" className="link">
-          this link
+          {<FormattedMessage id="thisLink" />}
         </NavLink>
       </p>
     </Form>
